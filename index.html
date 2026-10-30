@@ -8,6 +8,8 @@
 <style>
   body {
     margin: 0;
+    padding: 24px;
+    box-sizing: border-box;
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -15,6 +17,7 @@
     background: #eaf5f7;
     font-family: Arial, sans-serif;
   }
+  .cards { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 24px; }
   .card {
     width: 310px;
     padding: 30px 20px;
@@ -46,8 +49,9 @@
 </style>
 </head>
 <body>
+<div class="cards">
 
-<button class="card" onclick="speakArabic()">
+<button class="card" onclick="speakArabic('عَالَمٌ')">
   <svg class="earth" viewBox="0 0 240 240"
        xmlns="http://www.w3.org/2000/svg">
     <defs>
@@ -80,8 +84,32 @@
   <div class="hint">🔊 Нажмите, чтобы услышать</div>
 </button>
 
+<button class="card" onclick="speakArabic('أَرْضٌ')">
+  <svg class="earth" viewBox="0 0 240 240" role="img" aria-label="Земля: горы, поле и дерево" xmlns="http://www.w3.org/2000/svg">
+    <defs><clipPath id="landscapeCircle"><circle cx="120" cy="120" r="105"/></clipPath></defs>
+    <g clip-path="url(#landscapeCircle)">
+      <rect width="240" height="240" fill="#bdeaff"/>
+      <circle cx="187" cy="57" r="24" fill="#ffe37d"/>
+      <path d="M0 136 L55 65 100 131 151 75 240 158 240 240 0 240Z" fill="#8ca6a1"/>
+      <path d="M0 151 Q61 100 122 149 Q170 109 240 155 L240 240 0 240Z" fill="#67bb74"/>
+      <path d="M0 180 Q110 146 240 178 L240 240 0 240Z" fill="#b27b4c"/>
+      <path d="M0 197 Q105 170 240 202 L240 240 0 240Z" fill="#99643f"/>
+      <path d="M154 174 L154 118" stroke="#805036" stroke-width="12" stroke-linecap="round"/>
+      <circle cx="151" cy="100" r="29" fill="#328d50"/>
+      <circle cx="128" cy="113" r="22" fill="#43ac60"/>
+      <circle cx="175" cy="113" r="23" fill="#43ac60"/>
+      <path d="M61 171 Q66 150 83 149 M65 169 Q54 152 42 157" fill="none" stroke="#267f42" stroke-width="5" stroke-linecap="round"/>
+      <path d="M203 189 Q202 177 212 173 M202 187 Q194 176 187 179" fill="none" stroke="#267f42" stroke-width="4" stroke-linecap="round"/>
+    </g>
+    <circle cx="120" cy="120" r="105" fill="none" stroke="#528f8c" stroke-width="4"/>
+  </svg>
+  <div class="arabic" lang="ar">أَرْضٌ</div>
+  <div class="hint">🔊 Нажмите, чтобы услышать</div>
+</button>
+</div>
+
 <script>
-function speakArabic() {
+function speakArabic(word) {
   if (!("speechSynthesis" in window)) {
     alert("Браузер не поддерживает озвучивание.");
     return;
@@ -89,7 +117,7 @@ function speakArabic() {
 
   window.speechSynthesis.cancel();
 
-  const speech = new SpeechSynthesisUtterance("عَالَمٌ");
+  const speech = new SpeechSynthesisUtterance(word);
   speech.lang = "ar-SA";
   speech.rate = 0.8;
 
