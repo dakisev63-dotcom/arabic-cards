@@ -211,6 +211,45 @@
   <div class="arabic" lang="ar">هِلَالٌ</div>
   <div class="hint">🔊 Нажмите, чтобы услышать</div>
 </button>
+
+<button class="card" onclick="speakArabic('نَجْمٌ')" aria-label="نَجْمٌ — звезда, нажмите для произношения">
+  <svg class="earth" viewBox="0 0 240 240" role="img" aria-label="Одна яркая сияющая звезда на тёмно-синем ночном небе" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <clipPath id="starSkyCircle"><circle cx="120" cy="120" r="105"/></clipPath>
+      <radialGradient id="starSkyGlow">
+        <stop offset="0%" stop-color="#f9eaa1" stop-opacity=".9"/>
+        <stop offset="40%" stop-color="#f8d571" stop-opacity=".32"/>
+        <stop offset="100%" stop-color="#e3ba76" stop-opacity="0"/>
+      </radialGradient>
+      <radialGradient id="starGold">
+        <stop offset="0%" stop-color="#fffbe6"/>
+        <stop offset="60%" stop-color="#ffed91"/>
+        <stop offset="100%" stop-color="#ffc94f"/>
+      </radialGradient>
+    </defs>
+    <g clip-path="url(#starSkyCircle)">
+      <rect width="240" height="240" fill="#122554"/>
+      <circle cx="120" cy="116" r="105" fill="url(#starSkyGlow)"/>
+      <path d="M0 217 Q52 205 93 222 Q156 196 240 223 L240 240 0 240Z" fill="#203760"/>
+      <g stroke="#ffd979" stroke-width="3" stroke-linecap="round" opacity=".9">
+        <line x1="120" y1="24" x2="120" y2="44"/>
+        <line x1="120" y1="188" x2="120" y2="208"/>
+        <line x1="28" y1="116" x2="48" y2="116"/>
+        <line x1="192" y1="116" x2="212" y2="116"/>
+        <line x1="54" y1="50" x2="68" y2="64"/>
+        <line x1="172" y1="168" x2="186" y2="182"/>
+        <line x1="54" y1="182" x2="68" y2="168"/>
+        <line x1="172" y1="64" x2="186" y2="50"/>
+      </g>
+      <path d="M120 49 L136 98 L187 98 L146 129 L161 179 L120 149 L79 179 L94 129 L53 98 L104 98 Z" fill="url(#starGold)" stroke="#ffe8a5" stroke-width="3" stroke-linejoin="round"/>
+      <path d="M120 67 L131 108 L172 108 L139 133 L151 164 L120 141 L89 164 L101 133 L68 108 L109 108 Z" fill="#fff8ce" opacity=".5"/>
+      <circle cx="120" cy="116" r="7" fill="#fffef0" opacity=".85"/>
+    </g>
+    <circle cx="120" cy="120" r="105" fill="none" stroke="#6b8cbd" stroke-width="4"/>
+  </svg>
+  <div class="arabic" lang="ar">نَجْمٌ</div>
+  <div class="hint">🔊 Нажмите, чтобы услышать</div>
+</button>
 </div>
 
 <script>
