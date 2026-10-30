@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Мой арабский словарь</title>
+<style>
+  body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #eaf5f7;
+    font-family: Arial, sans-serif;
+  }
+  .card {
+    width: 310px;
+    padding: 30px 20px;
+    border: 3px solid #e4c06d;
+    border-radius: 25px;
+    background: white;
+    box-shadow: 0 12px 30px #0002;
+    cursor: pointer;
+    text-align: center;
+  }
+  .card:hover {
+    transform: scale(1.03);
+  }
+  .earth {
+    width: 230px;
+    height: 230px;
+  }
+  .arabic {
+    font-family: "Traditional Arabic", "Times New Roman", serif;
+    font-size: 65px;
+    color: #184e77;
+    margin: 15px 0;
+    direction: rtl;
+  }
+  .hint {
+    color: #526b7a;
+    font-size: 17px;
+  }
+</style>
+</head>
+<body>
+
+<button class="card" onclick="speakArabic()">
+  <svg class="earth" viewBox="0 0 240 240"
+       xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <clipPath id="globe">
+        <circle cx="120" cy="120" r="105"/>
+      </clipPath>
+    </defs>
+    <circle cx="120" cy="120" r="105"
+            fill="#42b6ee"/>
+    <g clip-path="url(#globe)" fill="#42b978">
+      <path d="M35 45 L80 18 108 38 98 64
+        65 75 82 95 72 120 50 113
+        40 90 18 80 Z"/>
+      <path d="M83 125 L115 116 135 140
+        120 171 108 214 88 181 80 151 Z"/>
+      <path d="M143 29 L190 24 230 65
+        211 99 183 96 174 122 154 105
+        139 77 117 67 Z"/>
+      <path d="M159 127 L193 115 208 148
+        190 185 168 171 150 146 Z"/>
+      <path d="M193 190 L222 182 239 211
+        210 229 187 211 Z"/>
+    </g>
+    <circle cx="120" cy="120" r="105"
+            fill="none" stroke="#197bb2"
+            stroke-width="4"/>
+  </svg>
+
+  <div class="arabic" lang="ar">عَالَمٌ</div>
+  <div class="hint">🔊 Нажмите, чтобы услышать</div>
+</button>
+
+<script>
+function speakArabic() {
+  if (!("speechSynthesis" in window)) {
+    alert("Браузер не поддерживает озвучивание.");
+    return;
+  }
+
+  window.speechSynthesis.cancel();
+
+  const speech = new SpeechSynthesisUtterance("عَالَمٌ");
+  speech.lang = "ar-SA";
+  speech.rate = 0.8;
+
+  const voices = window.speechSynthesis.getVoices();
+  const arabicVoice = voices.find(
+    voice => voice.lang.toLowerCase().startsWith("ar")
+  );
+
+  if (arabicVoice) {
+    speech.voice = arabicVoice;
+  }
+
+  window.speechSynthesis.speak(speech);
+}
+</script>
+
+</body>
+</html>
