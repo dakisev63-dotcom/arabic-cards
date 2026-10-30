@@ -139,6 +139,36 @@
   <div class="arabic" lang="ar">شَمْسٌ</div>
   <div class="hint">🔊 Нажмите, чтобы услышать</div>
 </button>
+
+<button class="card" onclick="speakArabic('قَمَرٌ')" aria-label="قَمَرٌ — луна, нажмите для произношения">
+  <svg class="earth" viewBox="0 0 240 240" role="img" aria-label="Полумесяц и звезды в ночном небе" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <clipPath id="moonCircle"><circle cx="120" cy="120" r="105"/></clipPath>
+      <mask id="moonCrescent">
+        <rect width="240" height="240" fill="black"/>
+        <circle cx="116" cy="115" r="61" fill="white"/>
+        <circle cx="148" cy="87" r="60" fill="black"/>
+      </mask>
+    </defs>
+    <g clip-path="url(#moonCircle)">
+      <rect width="240" height="240" fill="#172d66"/>
+      <circle cx="116" cy="115" r="78" fill="#536cab" opacity=".26"/>
+      <circle cx="116" cy="115" r="63" fill="#ffe8a3" mask="url(#moonCrescent)"/>
+      <g fill="#fff5c8">
+        <circle cx="39" cy="66" r="3"/><circle cx="184" cy="48" r="3"/>
+        <circle cx="200" cy="132" r="2.5"/><circle cx="55" cy="155" r="2"/>
+        <circle cx="92" cy="32" r="2"/><circle cx="204" cy="90" r="2"/>
+        <circle cx="77" cy="188" r="2.5"/><circle cx="167" cy="177" r="2.5"/>
+        <path d="M51 103 l3 8 8 3-8 3-3 8-3-8-8-3 8-3Z"/>
+        <path d="M186 156 l2.5 6.5 6.5 2.5-6.5 2.5-2.5 6.5-2.5-6.5-6.5-2.5 6.5-2.5Z"/>
+      </g>
+      <path d="M0 211 Q42 177 86 207 Q135 166 178 201 Q208 188 240 206 L240 240 0 240Z" fill="#253d65"/>
+    </g>
+    <circle cx="120" cy="120" r="105" fill="none" stroke="#7792c7" stroke-width="4"/>
+  </svg>
+  <div class="arabic" lang="ar">قَمَرٌ</div>
+  <div class="hint">🔊 Нажмите, чтобы услышать</div>
+</button>
 </div>
 
 <script>
