@@ -358,6 +358,42 @@
   <div class="arabic" lang="ar">غُيُومٌ</div>
   <div class="hint">🔊 Нажмите, чтобы услышать</div>
 </button>
+
+<button class="card" onclick="speakArabic('السَّمَاءُ')" aria-label="السَّمَاءُ — небо, нажмите для произношения">
+  <svg class="earth" viewBox="0 0 240 240" role="img" aria-label="Широкое голубое небо с лёгкими облаками над далёким горизонтом" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <clipPath id="samaaSkyClip"><circle cx="120" cy="120" r="105"/></clipPath>
+      <linearGradient id="samaaSkyGradient" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#1769bb"/>
+        <stop offset="46%" stop-color="#55b9ee"/>
+        <stop offset="88%" stop-color="#c9edff"/>
+        <stop offset="100%" stop-color="#f0f8fd"/>
+      </linearGradient>
+      <radialGradient id="samaaSunGlow" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#fff6c9" stop-opacity=".75"/>
+        <stop offset="100%" stop-color="#fff6c9" stop-opacity="0"/>
+      </radialGradient>
+    </defs>
+    <g clip-path="url(#samaaSkyClip)">
+      <rect width="240" height="240" fill="url(#samaaSkyGradient)"/>
+      <circle cx="183" cy="67" r="53" fill="url(#samaaSunGlow)"/>
+      <circle cx="183" cy="67" r="16" fill="#fff6d7" opacity=".9"/>
+      <g fill="#ffffff" opacity=".82">
+        <path d="M13 88 C24 78 34 80 42 83 C47 73 59 72 67 81 C75 79 83 83 88 88 C58 94 36 93 13 88Z"/>
+        <path d="M138 112 C147 104 158 104 167 107 C171 99 186 98 196 107 C205 104 216 109 227 115 C194 119 163 117 138 112Z"/>
+        <path d="M18 149 C35 143 49 146 60 150 C73 141 83 143 94 151 C62 158 40 157 18 149Z" opacity=".65"/>
+      </g>
+      <g stroke="#eefaff" opacity=".53" stroke-width="3" stroke-linecap="round" fill="none">
+        <path d="M28 119 Q57 115 86 118"/>
+        <path d="M146 144 Q170 138 205 142"/>
+      </g>
+      <path d="M0 211 Q53 204 105 212 T240 209 L240 240 H0Z" fill="#6d9b9e" opacity=".26"/>
+    </g>
+    <circle cx="120" cy="120" r="105" fill="none" stroke="#4c94c6" stroke-width="4"/>
+  </svg>
+  <div class="arabic" lang="ar">السَّمَاءُ</div>
+  <div class="hint">🔊 Нажмите, чтобы услышать</div>
+</button>
 </div>
 
 <script>
